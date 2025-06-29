@@ -16,3 +16,7 @@ apt install -y php php-cli php-fpm php-mysql php-mbstring php-xml php-curl php-b
 git clone https://github.com/shakib112/shakib-panel.git
 cd shakib-panel
 bash install.sh
+cp .env.example .env
+php artisan key:generate
+# Edit your .env DB settings
+php artisan migrate --seed --force
